@@ -1,8 +1,12 @@
+import {Navbar, Aside} from "./";
 
 function App() {
   return (
     <div className="App">
-      Hello
+      <Navbar />
+      <div className= "main">
+        <Aside />
+      </div>
     </div>
   );
 }
