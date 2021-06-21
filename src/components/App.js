@@ -1,11 +1,12 @@
-import {Navbar, Aside} from "./";
+import {Navbar, Aside, Content} from "./";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
       <div className= "main">
         <Aside />
+        <Content />
       </div>
     </div>
   );
