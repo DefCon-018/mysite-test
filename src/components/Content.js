@@ -1,18 +1,64 @@
 import React from 'react';
-import { addData } from '../actions';
+import { addData, addNewData } from '../actions';
 import { data } from '../data';
 import {connect} from 'react-redux';
 import {FaSyncAlt, FaWifi, FaBorderAll, FaPlus, FaPen, FaTrashAlt, FaRegEye} from "react-icons/fa";
 
 class Content extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.state= {
+            addRole: 0,
+            name: '',
+            accessLevel: '',
+            num_members: '',
+        }
+    }
     componentDidMount(){
         const {dispatch} = this.props;
         dispatch(addData(data));
     }
 
+    handleAddRole = () =>{
+        let {addRole} = this.state;
+        if(addRole == 1){
+            this.setState({
+                name: '',
+                accessLevel: '',
+                num_members: ''
+            })
+        }
+        this.setState((prevState)=>{
+            return{
+                addRole: prevState.addRole ^ 1
+            }
+        })
+    }
+
+    handleSaveChanges = (e) => {
+        e.preventDefault();
+        let {name, accessLevel, num_members} = this.state;
+        if(name === '' || accessLevel === '', num_members === ''){
+            return;
+        }
+        let newData= {
+            name,
+            accessLevel,
+            num_members
+        }
+        this.props.dispatch(addNewData(newData));
+    }
+
+    handleFieldChange = (field, value) =>{
+        this.setState({
+            [field]: value
+        })
+    }
+
     render() {
         let {data} = this.props;
+        let {addRole} = this.state;
         return (
             <div className= "container">
                 <div className= "heading">
@@ -27,10 +73,21 @@ class Content extends React.Component {
 
                 <div className= "content">
                     <div className= "content-head">
-                        <button className= "btn"><span className= "plus"><FaPlus /></span> Add Role</button>
+                        <button onClick= {this.handleAddRole} className= "btn"><span className= "plus"><FaPlus /></span> Add Role</button>
                         <div><FaPen /></div>
                         <div><FaTrashAlt /></div>
                     </div>
+
+                    {
+                        addRole === 1 && 
+                        <form className= "add-form">
+                            <input required onChange= {(e)=>{this.handleFieldChange('name', e.target.value)}} type= "text" placeholder= "Department/Role Name" />
+                            <input required onChange= {(e)=>{this.handleFieldChange('accessLevel', e.target.value)}} type= "text" placeholder= "Access Level" />
+                            <input required onChange= {(e)=>{this.handleFieldChange('num_members', e.target.value)}} type= "text" placeholder= "No. of members" />
+                            <button onClick= {this.handleSaveChanges} className= "btn save">Save Changes</button>
+                        </form>
+                    }
+
                     <div className= "content-detail">
                         <table>
                             <tr className= "detail-head">

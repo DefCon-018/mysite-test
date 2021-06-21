@@ -173,6 +173,7 @@ img{
   border: none;
   outline: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 .plus{
   padding: 8px;
@@ -190,6 +191,7 @@ table{
 tr{
   box-shadow: 0 3px 1px lightgray;
   margin-bottom: 2px;
+  cursor: pointer;
 }
 
 td{
@@ -260,4 +262,18 @@ td{
   border-radius: 30px;
   border: 1.3px solid #FF4646;
   color: #FF4646;
+}
+
+input{
+  padding: 6px;
+  width: 100%;
+  margin: 6px 0px ;
+}
+
+.add-form{
+  transition: display 1s;
+  padding: 15px 0px ;
+}
+.save{
+  background-color: green;
 }
