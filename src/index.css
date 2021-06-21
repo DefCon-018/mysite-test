@@ -12,63 +12,62 @@ code {
     monospace;
 }
 
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-
 /* Navbar */
-.nav{
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px;
 }
-.left, .right{
+.left,
+.right {
   width: 300px;
   margin: 0px 20px;
 }
 
-.right{
+.right {
   width: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav-img{
+.nav-img {
   width: 30px;
   height: 30px;
 }
-img{
+img {
   width: 100%;
   height: 100%;
 }
 
-.profile-img{
+.profile-img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: blueviolet;
   margin: 0px 10px;
 }
-.nav-name{
+.nav-name {
   display: flex;
   align-items: center;
 }
-.nav-images{
+.nav-images {
   display: flex;
   justify-content: space-between;
   width: 80px;
 }
 
-
 /* aside */
 
-.aside{
-  background-color: #FCFBFF;
+.aside {
+  background-color: #fcfbff;
   width: 10%;
   height: 100%;
   min-width: 250px;
@@ -76,28 +75,28 @@ img{
   padding-left: 3px;
 }
 
-.part{
+.part {
   display: flex;
   padding: 10px;
   align-items: center;
   color: #757575;
 }
-.part span{
+.part span {
   padding: 0px 0px 0px 20px;
 }
 
-.main{
+.main {
   display: flex;
 }
-.container{
+.container {
   width: 89%;
   height: 500px;
   /* background-color: blue; */
   margin-left: 250px;
 }
 
-.selected{
-  background-color: #E1D8F1;
+.selected {
+  background-color: #e1d8f1;
   color: blue;
   border-left: 4px solid blue;
 }
@@ -107,16 +106,15 @@ img{
   height: 50px;
 } */
 
-
-.tilt{
+.tilt {
   transform: rotate(60deg);
 }
 
-.p-10{
+.p-10 {
   padding: 0px 10px;
 }
 
-.heading{
+.heading {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -124,14 +122,15 @@ img{
   border-bottom: 0.3px solid gray;
 }
 
-.heading-left, .heading-right{
- margin: 10px 20px 0px 20px;
+.heading-left,
+.heading-right {
+  margin: 10px 20px 0px 20px;
 }
 
-.heading-left{
+.heading-left {
   display: flex;
 }
-.para{
+.para {
   padding: 10px 0px;
   margin: 0px 6px;
   display: flex;
@@ -139,61 +138,60 @@ img{
   /* border-left: 1px solid gray; */
 }
 
-.bl-1{
+.bl-1 {
   border-left: 1px solid gray;
 }
 
-.selected-b{
+.selected-b {
   color: blue;
   border-bottom: 3px solid blue;
 }
 
-.content{
+.content {
   width: 90%;
   margin: 30px auto;
   /* background-color: yellow; */
   height: 200px;
 }
 
-.content-head{
+.content-head {
   padding: 10px 0px 19px 0px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.content-head div{
+.content-head div {
   margin: 0px 15px;
 }
 
-
-.btn{
+.btn {
   padding: 8px 20px;
-  background-color: #673AB7;
+  background-color: #673ab7;
   color: white;
   border: none;
   outline: none;
   border-radius: 5px;
   cursor: pointer;
 }
-.plus{
+.plus {
   padding: 8px;
 }
 
-table{
+table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.detail-head{
-  background-color: #F2F2F2;
+.detail-head {
+  background-color: #f2f2f2;
 }
 
-tr{
+tr {
   box-shadow: 0 3px 1px lightgray;
   margin-bottom: 2px;
 }
 
-td{
+td {
   padding: 15px;
 }
 
@@ -204,18 +202,18 @@ td{
   border: 0.1px solid lightgray;
   background-color: white;
 } */
-.eye{
+.eye {
   color: gray;
 }
-.center{
+.center {
   padding-left: 25px;
   /* background-color: #673AB7; */
 }
-.center-1{
+.center-1 {
   padding-left: 50px;
 }
 
-.check{
+.check {
   /* background-color: #673AB7; */
   width: 10px;
 }
@@ -236,10 +234,10 @@ td{
   background-color: gray;
 }
 
-.access{
+.access {
   width: 150px;
 }
-.access p{
+.access p {
   padding: 3px 10px;
   /* background-color: orange; */
   font-size: 0.8rem;
@@ -247,62 +245,69 @@ td{
   text-align: center;
   font-weight: 600;
 }
-.access-lvl{
+.access-lvl {
   padding-left: 40px;
   /* background-color: #673AB7; */
 }
-.all-access{
-  background-color: #BEE7CF;
+.all-access {
+  background-color: #bee7cf;
   border-radius: 30px;
-  border: 1.3px solid #2DB065;
+  border: 1.3px solid #27ae60;
+  color: #27ae60;
 }
-.restricted{
-  background-color: #FFB5B5;
+.restricted-access {
+  background-color: #ffb5b5;
   border-radius: 30px;
-  border: 1.3px solid #FF4646;
-  color: #FF4646;
+  border: 1.3px solid #ff0808;
+  color: #ff0808;
+}
+.no-access {
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  border: 1.3px solid #bdbdbd;
+  color: #bdbdbd;
 }
 
-input{
+input {
   padding: 6px;
   width: 100%;
-  margin: 6px 0px ;
+  margin: 6px 0px;
 }
 
-.add-form{
+.add-form {
   transition: display 1s;
-  padding: 15px 0px ;
+  padding: 15px 0px;
 }
-.save{
+.save {
   background-color: green;
 }
 
-.link{
+.link {
   text-decoration: none;
   color: black;
 }
 
-.details-heading{
+.details-heading {
   /* background-color: #2DB065; */
   display: flex;
   border-bottom: 0.3px solid gray;
 }
 
-.details-para{
+.details-para {
   padding: 10px;
 }
 
-.team-name h3{
+.team-name h3 {
   color: blue;
   font-weight: 600;
   margin-bottom: 30px;
 }
 
-.team-name{
+.team-name {
   position: relative;
 }
 
-.back-arrow{
+.back-arrow {
   position: absolute;
   left: -30px;
   top: 5px;
@@ -314,20 +319,19 @@ input{
   margin-top: 30px;
 }
 
-.center-2{
+.center-2 {
   /* background-color: #2DB065; */
   text-align: center;
 }
 
-.check{
+.check {
   vertical-align: center;
   /* background-color: #2DB065; */
 }
-.check-2{
+.check-2 {
   color: #757575;
   cursor: pointer;
 }
-
 
 .switch {
   position: relative;
@@ -336,7 +340,7 @@ input{
   height: 23px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -350,28 +354,28 @@ input{
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 20px;
   width: 20px;
   left: 4px;
   bottom: 2px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #27AE60;
+  background-color: #27ae60;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #27AE60;
+  box-shadow: 0 0 1px #27ae60;
 }
 
 input:checked + .slider:before {
@@ -389,7 +393,16 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.eye{
+.eye {
   /* background-color: #2196F3; */
   width: 40px;
+}
+
+.operations {
+  display: flex;
+  justify-content: center;
+}
+.operations div {
+  padding: 0px 5px;
+  text-transform: capitalize;
 }
