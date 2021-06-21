@@ -92,7 +92,7 @@ img{
 .container{
   width: 89%;
   height: 500px;
-  background-color: blue;
+  /* background-color: blue; */
   margin-left: 250px;
 }
 
@@ -106,3 +106,44 @@ img{
   width: 50px;
   height: 50px;
 } */
+
+
+.tilt{
+  transform: rotate(60deg);
+}
+
+.p-10{
+  padding: 0px 10px;
+}
+
+.heading{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.3px solid gray;
+}
+
+.heading-left, .heading-right{
+ margin: 10px 20px 0px 20px;
+}
+
+.heading-left{
+  display: flex;
+}
+.para{
+  padding: 10px 0px;
+  margin: 0px 6px;
+  display: flex;
+  align-items: center;
+  /* border-left: 1px solid gray; */
+}
+
+.bl-1{
+  border-left: 1px solid gray;
+}
+
+.selected-b{
+  color: blue;
+  border-bottom: 3px solid blue;
+}
