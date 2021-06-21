@@ -2,6 +2,7 @@ import React from 'react';
 import { addData, addNewData } from '../actions';
 import { data } from '../data';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {FaSyncAlt, FaWifi, FaBorderAll, FaPlus, FaPen, FaTrashAlt, FaRegEye} from "react-icons/fa";
 
 class Content extends React.Component {
@@ -105,7 +106,7 @@ class Content extends React.Component {
                                             <td className= "check">
                                                 <input type= "checkbox" className= "checkbox-round" />
                                             </td>
-                                            <td>{d.name}</td>
+                                            <td><Link className= "link" to= "/detail">{d.name}</Link></td>
                                             <td>
                                                 <div className= "access restricted">
                                                     <p>{d.accessLevel}</p>
@@ -115,6 +116,7 @@ class Content extends React.Component {
                                             <td className= "center">1 min ago</td>
                                             <td className= "eye"><FaRegEye /></td>
                                         </tr>
+                                        
                                     )
                                 })
                             }
