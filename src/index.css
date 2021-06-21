@@ -147,3 +147,117 @@ img{
   color: blue;
   border-bottom: 3px solid blue;
 }
+
+.content{
+  width: 90%;
+  margin: 30px auto;
+  /* background-color: yellow; */
+  height: 200px;
+}
+
+.content-head{
+  padding: 10px 0px 19px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.content-head div{
+  margin: 0px 15px;
+}
+
+
+.btn{
+  padding: 8px 20px;
+  background-color: #673AB7;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.plus{
+  padding: 8px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail-head{
+  background-color: #F2F2F2;
+}
+
+tr{
+  box-shadow: 0 3px 1px lightgray;
+  margin-bottom: 2px;
+}
+
+td{
+  padding: 15px;
+}
+
+/* .checkbox{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 0.1px solid lightgray;
+  background-color: white;
+} */
+.eye{
+  color: gray;
+}
+.center{
+  padding-left: 25px;
+  /* background-color: #673AB7; */
+}
+.center-1{
+  padding-left: 50px;
+}
+
+.check{
+  /* background-color: #673AB7; */
+  width: 10px;
+}
+
+.checkbox-round {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: gray;
+}
+
+.access{
+  width: 150px;
+}
+.access p{
+  padding: 3px 10px;
+  /* background-color: orange; */
+  font-size: 0.8rem;
+  vertical-align: center;
+  text-align: center;
+  font-weight: 600;
+}
+.access-lvl{
+  padding-left: 40px;
+  /* background-color: #673AB7; */
+}
+.all-access{
+  background-color: #BEE7CF;
+  border-radius: 30px;
+  border: 1.3px solid #2DB065;
+}
+.restricted{
+  background-color: #FFB5B5;
+  border-radius: 30px;
+  border: 1.3px solid #FF4646;
+  color: #FF4646;
+}
