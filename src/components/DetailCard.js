@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Expand } from '.';
 import {
   FaSyncAlt,
   FaWifi,
@@ -13,69 +14,77 @@ class DetailCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      budget: {
-        operations: {
-          view: 1,
-          create: 1,
-          edit: 1,
-          delete: 1,
-        },
-        cnt: 4,
-        open: 0,
-      },
-      bidding: {
-        operations: {
-          view: 0,
-          create: 0,
-          edit: 0,
-          delete: 0,
-        },
-        cnt: 0,
-        open: 0,
-      },
-      vendorPortal: {
-        operations: {
-          view: 1,
-          create: 1,
-          edit: 0,
-          delete: 0,
-        },
-        cnt: 2,
-        open: 0,
-      },
-      purchaseOrder: {
-        operations: {
-          view: 1,
-          create: 1,
-          edit: 0,
-          delete: 0,
-        },
-        cnt: 2,
-        open: 0,
-      },
-      organisation: {
-        operations: {
-          view: 1,
-          create: 1,
-          edit: 1,
-          delete: 1,
-        },
-        cnt: 4,
-        open: 0,
-      },
-      permission: {
-        operations: {
-          view: 0,
-          create: 0,
-          edit: 0,
-          delete: 0,
-        },
-        cnt: 0,
-        open: 0,
-      },
-    };
+  budget: {
+    operations: {
+      view: 1,
+      create: 1,
+      edit: 1,
+      delete: 1,
+    },
+    cnt: 4,
+    open: 0,
+  },
+  bidding: {
+    operations: {
+      view: 0,
+      create: 0,
+      edit: 0,
+      delete: 0,
+    },
+    cnt: 0,
+    open: 0,
+  },
+  vendorPortal: {
+    operations: {
+      view: 1,
+      create: 1,
+      edit: 0,
+      delete: 0,
+    },
+    cnt: 2,
+    open: 0,
+  },
+  purchaseOrder: {
+    operations: {
+      view: 1,
+      create: 1,
+      edit: 0,
+      delete: 0,
+    },
+    cnt: 2,
+    open: 0,
+  },
+  organisation: {
+    operations: {
+      view: 1,
+      create: 1,
+      edit: 1,
+      delete: 1,
+    },
+    cnt: 4,
+    open: 0,
+  },
+  permission: {
+    operations: {
+      view: 0,
+      create: 0,
+      edit: 0,
+      delete: 0,
+    },
+    cnt: 0,
+    open: 0,
+  },
+};
   }
+
+  handleExpand = (item) => {
+    this.setState();
+    console.log('this.state', this.state);
+  };
+
   render() {
+    console.log('Render');
+    console.log('render state', this.state);
     let {
       budget,
       permission,
@@ -130,23 +139,29 @@ class DetailCard extends React.Component {
             </div>
           </div>
           <div className="details-table">
-            <table>
-              <tr className="detail-head">
-                <td></td>
-                <td>Department/Role Name</td>
-                <td className="access-lvl">Access Level</td>
-                <td className="center-2">Summary</td>
-                <td>Last updated</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td className="check check-2">
-                  <div>
+            <div className="table-container">
+              <div className="info table-heading">
+                <p className="idx"></p>
+                <p className="table-name">Department/Role Name</p>
+                <p className="access-lvl center-2">Access Level</p>
+                <p className="center-2 summery">Summary</p>
+                <p className="last-updated">Last updated</p>
+                <p className="toggle"></p>
+              </div>
+            </div>
+
+            <div className="table-container">
+              <div className="info">
+                <div>
+                  <div
+                    className="idx check check-2"
+                    onClick={() => this.handleExpand('budget')}
+                  >
                     <FaPlusCircle />
                   </div>
-                </td>
-                <td>Budget</td>
-                <td>
+                </div>
+                <div className="table-name">Budget</div>
+                <div className="access-lvl">
                   <div className="access">
                     {budget.cnt === 4 && (
                       <p className="all-access">All Access</p>
@@ -156,8 +171,8 @@ class DetailCard extends React.Component {
                     )}
                     {budget.cnt === 0 && <p className="no-access">No Access</p>}
                   </div>
-                </td>
-                <td className="center-2">
+                </div>
+                <div className="center-2 summery">
                   <div className="operations">
                     {Object.entries(budget.operations).map((item, idx) => {
                       if (item[1] === 1) {
@@ -168,23 +183,27 @@ class DetailCard extends React.Component {
                       }
                     })}
                   </div>
-                </td>
-                <td className="center">1 min ago</td>
-                <td className="eye">
+                </div>
+                <div className="last-updated center-3">1 min ago</div>
+                <div className="eye toggle">
                   <label className="switch">
                     <input type="checkbox" checked={budget.cnt} />
                     <span className="slider round"></span>
                   </label>
-                </td>
-              </tr>
-              <tr>
-                <td className="check check-2">
-                  <div>
+                </div>
+              </div>
+              {budget.open === 1 && <Expand name="Budget" />}
+            </div>
+
+            <div className="table-container">
+              <div className="info">
+                <div>
+                  <div className="idx check check-2">
                     <FaPlusCircle />
                   </div>
-                </td>
-                <td>Bidding</td>
-                <td>
+                </div>
+                <div className="table-name">Bidding</div>
+                <div className="access-lvl">
                   <div className="access">
                     {bidding.cnt === 4 && (
                       <p className="all-access">All Access</p>
@@ -196,8 +215,8 @@ class DetailCard extends React.Component {
                       <p className="no-access">No Access</p>
                     )}
                   </div>
-                </td>
-                <td className="center-2">
+                </div>
+                <div className="center-2 summery">
                   <div className="operations">
                     {Object.entries(bidding.operations).map((item, idx) => {
                       console.log(item, item[0], item[1]);
@@ -209,23 +228,26 @@ class DetailCard extends React.Component {
                       }
                     })}
                   </div>
-                </td>
-                <td className="center">1 min ago</td>
-                <td className="eye">
+                </div>
+                <div className="last-updated center-3">1 min ago</div>
+                <div className="eye toggle">
                   <label className="switch">
                     <input type="checkbox" checked={bidding.cnt} />
                     <span className="slider round"></span>
                   </label>
-                </td>
-              </tr>
-              <tr>
-                <td className="check check-2">
-                  <div>
+                </div>
+              </div>
+            </div>
+
+            <div className="table-container">
+              <div className="info">
+                <div>
+                  <div className="idx check check-2">
                     <FaPlusCircle />
                   </div>
-                </td>
-                <td>Vendor Portal</td>
-                <td>
+                </div>
+                <div className="table-name">Vendor Portal</div>
+                <div className="access-lvl">
                   <div className="access">
                     {vendorPortal.cnt === 4 && (
                       <p className="all-access">All Access</p>
@@ -237,8 +259,8 @@ class DetailCard extends React.Component {
                       <p className="no-access">No Access</p>
                     )}
                   </div>
-                </td>
-                <td className="center-2">
+                </div>
+                <div className="center-2 summery">
                   <div className="operations">
                     {Object.entries(vendorPortal.operations).map(
                       (item, idx) => {
@@ -251,24 +273,26 @@ class DetailCard extends React.Component {
                       }
                     )}
                   </div>
-                </td>
-                <td className="center">1 min ago</td>
-                <td className="eye">
+                </div>
+                <div className="last-updated center-3">1 min ago</div>
+                <div className="eye toggle">
                   <label className="switch">
                     <input type="checkbox" checked={vendorPortal.cnt} />
                     <span className="slider round"></span>
                   </label>
-                </td>
-              </tr>
+                </div>
+              </div>
+            </div>
 
-              <tr>
-                <td className="check check-2">
-                  <div>
+            <div className="table-container">
+              <div className="info">
+                <div>
+                  <div className="idx check check-2">
                     <FaPlusCircle />
                   </div>
-                </td>
-                <td>Purchase order/Work order</td>
-                <td>
+                </div>
+                <div className="table-name">Purchase order/Work order</div>
+                <div className="access-lvl">
                   <div className="access">
                     {purchaseOrder.cnt === 4 && (
                       <p className="all-access">All Access</p>
@@ -280,8 +304,8 @@ class DetailCard extends React.Component {
                       <p className="no-access">No Access</p>
                     )}
                   </div>
-                </td>
-                <td className="center-2">
+                </div>
+                <div className="center-2 summery">
                   <div className="operations">
                     {Object.entries(purchaseOrder.operations).map(
                       (item, idx) => {
@@ -294,24 +318,26 @@ class DetailCard extends React.Component {
                       }
                     )}
                   </div>
-                </td>
-                <td className="center">1 min ago</td>
-                <td className="eye">
+                </div>
+                <div className="last-updated center-3">1 min ago</div>
+                <div className="eye toggle">
                   <label className="switch">
                     <input type="checkbox" checked={purchaseOrder.cnt} />
                     <span className="slider round"></span>
                   </label>
-                </td>
-              </tr>
+                </div>
+              </div>
+            </div>
 
-              <tr>
-                <td className="check check-2">
-                  <div>
+            <div className="table-container">
+              <div className="info">
+                <div>
+                  <div className="idx check check-2">
                     <FaPlusCircle />
                   </div>
-                </td>
-                <td>Organisation Profile</td>
-                <td>
+                </div>
+                <div className="table-name">Organisation Profile</div>
+                <div className="access-lvl">
                   <div className="access">
                     {organisation.cnt === 4 && (
                       <p className="all-access">All Access</p>
@@ -323,8 +349,8 @@ class DetailCard extends React.Component {
                       <p className="no-access">No Access</p>
                     )}
                   </div>
-                </td>
-                <td className="center-2">
+                </div>
+                <div className="center-2 summery">
                   <div className="operations">
                     {Object.entries(organisation.operations).map(
                       (item, idx) => {
@@ -337,24 +363,26 @@ class DetailCard extends React.Component {
                       }
                     )}
                   </div>
-                </td>
-                <td className="center">1 min ago</td>
-                <td className="eye">
+                </div>
+                <div className="last-updated center-3">1 min ago</div>
+                <div className="eye toggle">
                   <label className="switch">
                     <input type="checkbox" checked={organisation.cnt} />
                     <span className="slider round"></span>
                   </label>
-                </td>
-              </tr>
+                </div>
+              </div>
+            </div>
 
-              <tr>
-                <td className="check check-2">
-                  <div>
+            <div className="table-container">
+              <div className="info">
+                <div>
+                  <div className="idx check check-2">
                     <FaPlusCircle />
                   </div>
-                </td>
-                <td>Permission & Access Control</td>
-                <td>
+                </div>
+                <div className="table-name">Permission & Access Control</div>
+                <div className="access-lvl">
                   <div className="access">
                     {permission.cnt === 4 && (
                       <p className="all-access">All Access</p>
@@ -366,8 +394,8 @@ class DetailCard extends React.Component {
                       <p className="no-access">No Access</p>
                     )}
                   </div>
-                </td>
-                <td className="center-2">
+                </div>
+                <div className="center-2 summery">
                   <div className="operations">
                     {Object.entries(permission.operations).map((item, idx) => {
                       if (item[1] === 1) {
@@ -378,16 +406,16 @@ class DetailCard extends React.Component {
                       }
                     })}
                   </div>
-                </td>
-                <td className="center">1 min ago</td>
-                <td className="eye">
+                </div>
+                <div className="last-updated center-3">1 min ago</div>
+                <div className="eye toggle">
                   <label className="switch">
                     <input type="checkbox" checked={permission.cnt} />
                     <span className="slider round"></span>
                   </label>
-                </td>
-              </tr>
-            </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
