@@ -39,8 +39,8 @@ code {
 }
 
 .nav-img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 img {
   width: 100%;
@@ -515,4 +515,9 @@ input:checked + .slider:before {
   width: 30%;
   margin: 30px 20px;
   /* background-color: #27ae60; */
+}
+
+.left h1 {
+  color: darkblue;
+  font-family: sans-serif;
 }

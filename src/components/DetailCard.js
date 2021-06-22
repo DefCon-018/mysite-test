@@ -116,6 +116,11 @@ class DetailCard extends React.Component {
     this.props.dispatch(handlePermissionAction(permission ^ 1));
   };
 
+  handleAccessControl = (item, value) => {
+    let val = this.state[item];
+    let operation = val.operations[value];
+  };
+
   render() {
     console.log('Render');
     console.log('render state', this.state);
@@ -244,7 +249,7 @@ class DetailCard extends React.Component {
                   </label>
                 </div>
               </div>
-              {b === 1 && <Expand name="Budget" />}
+              {b === 1 && <Expand name="Budget" value={budget} />}
             </div>
 
             <div className="table-container">
@@ -302,7 +307,7 @@ class DetailCard extends React.Component {
                   </label>
                 </div>
               </div>
-              {bid === 1 && <Expand name="Budget" />}
+              {bid === 1 && <Expand name="Budget" value={bidding} />}
             </div>
 
             <div className="table-container">
@@ -361,7 +366,7 @@ class DetailCard extends React.Component {
                   </label>
                 </div>
               </div>
-              {ven === 1 && <Expand name="Budget" />}
+              {ven === 1 && <Expand name="Budget" value={vendorPortal} />}
             </div>
 
             <div className="table-container">
@@ -420,7 +425,7 @@ class DetailCard extends React.Component {
                   </label>
                 </div>
               </div>
-              {order === 1 && <Expand name="Budget" />}
+              {order === 1 && <Expand name="Budget" value={purchaseOrder} />}
             </div>
 
             <div className="table-container">
@@ -479,7 +484,7 @@ class DetailCard extends React.Component {
                   </label>
                 </div>
               </div>
-              {organ === 1 && <Expand name="Budget" />}
+              {organ === 1 && <Expand name="Budget" value={organisation} />}
             </div>
 
             <div className="table-container">
@@ -536,7 +541,7 @@ class DetailCard extends React.Component {
                   </label>
                 </div>
               </div>
-              {per === 1 && <Expand name="Budget" />}
+              {per === 1 && <Expand name="Budget" value={permission} />}
             </div>
           </div>
         </div>
